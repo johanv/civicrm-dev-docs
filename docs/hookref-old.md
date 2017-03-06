@@ -224,6 +224,8 @@ function modulename_civicrm_pre ($op, objectName, $objectId, &$objectRef) {
   if ($objectName != 'Contribution' || ($op != 'edit' && $op != 'create')) {
     return;
   }
+  // I'm not what will happen when $objectId is NULL, like
+  // when a new contribution is created.
   $contribution_id = $objectId;
   require_once 'CRM/Core/BAO/CustomValueTable.php';
   $my_foo = 'blah';
